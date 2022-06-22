@@ -1,5 +1,6 @@
 package pomscripts;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
@@ -23,10 +24,12 @@ public class BaseTest {
 
     @BeforeTest
     public void setUp() {
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         defaultPage = new DefaultPage(driver);
         homePage = new HomePage(driver);
+        loginModal = new LoginModal(driver);
         signUpModal = new SignUpModal(driver);
     }
 
