@@ -13,12 +13,13 @@ public class LoginModal extends BasePage{
  By usernameField = By.xpath("//*[@id='nav-link-login']");
  By passwordFieldField = By.xpath("//*[@id='nav-link-login']");
  By signInButton = By.xpath("//*[@id='nav-link-login']");
- By registerButton = By.xpath("");
+ By registerButton = By.xpath("//a[contains(text(), 'Register')]");
 
     // Interaction Methods
     public void enterUsername(String username) {
         driver.findElement(usernameField).clear();
         driver.findElement(usernameField).sendKeys();
+        driver.findElement(signInButton).click();
     }
 
     public void enterPassword(String password) {

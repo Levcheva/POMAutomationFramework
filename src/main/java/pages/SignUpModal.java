@@ -1,16 +1,32 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class SignUpModal extends BasePage{
+public class SignUpModal extends BasePage {
     public SignUpModal(WebDriver driver) {
         super(driver);
     }
 
     // Locators
+    @FindBy(xpath = "//input[@formcontrolname='username']")
+    WebElement usernameField;
+
+    @FindBy(xpath = "//input[@formcontrolname='email']")
+    WebElement emailField;
+
+    @FindBy(xpath = "//input[@formcontrolname='password']")
+    WebElement passwordField;
+
+    @FindBy(xpath = "//input[@formcontrolname='confirmPassword']")
+    WebElement confirmPasswordField;
+
+    @FindBy(id = "sign-in-button")
+    WebElement signUpButton;
 
     // Interaction Methods
-    public void inputUserName() {
+    public void inputUserName(String username) {
         usernameField.sendKeys("test61");
     }
 
@@ -18,18 +34,25 @@ public class SignUpModal extends BasePage{
         emailField.sendKeys("test61");
     }
 
-    public void inputPassword() {
+    public void inputPassword(String password) {
         passwordField.sendKeys("test61");
     }
 
-    public void clickSingUp() {
+    public void inputConfirmPassword(String password) {
+        confirmPasswordField.sendKeys(password);
+    }
+
+    public void clickSignUpButton() {
         signUpButton.click();
     }
 
-    public void registerUser() {
-        inputUserName();
+    public void registerUser(String username, String password) {
+        inputUserName(username);
         inputEmail();
-        clickSingUp()
+        inputPassword(password);
+        inputConfirmPassword(password);
+        clickSignUpButton();
     }
 
+    // Assertion Methods
 }

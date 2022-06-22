@@ -3,13 +3,14 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-/** the page after login */
+/**
+ * The page after the user has logged in
+ */
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
 
-    public HomePage (WebDriver driver) {
+    public HomePage(WebDriver driver) {
         super(driver);
     }
 
@@ -22,7 +23,7 @@ public class HomePage extends BasePage{
 
     // Interaction Methods
 
-    // Assertion Methods - not to be confused with assertions
+    // Boolean Methods to assert --> not to be confused with assertions
     public boolean isNewPostButtonDisplayed() {
         return newPostButton.isDisplayed();
     }
@@ -30,5 +31,4 @@ public class HomePage extends BasePage{
     public boolean isLogOutButtonDisplayed() {
         return logOutButton.isDisplayed();
     }
-
 }

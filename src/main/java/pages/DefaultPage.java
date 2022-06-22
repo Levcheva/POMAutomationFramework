@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,8 +12,6 @@ public class DefaultPage extends BasePage{
     //constructor
     public DefaultPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
-
     }
 
     // Locators
@@ -24,8 +21,14 @@ public class DefaultPage extends BasePage{
     @FindBy(id="nav-link-login")
     WebElement signInButton;
 
-    // Methods
+    // Interaction Methods
     public void clickLoginButton() {
         loginButton.click();
     }
+
+    public void clickSignInButton() {
+        signInButton.click();
+    }
+
+    // Assertion Methods
 }
