@@ -8,13 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 
 /** The page that is opened after the URL is hit. */
 
-public class DefaultPage {
-    WebDriver driver;
-
+public class DefaultPage extends BasePage{
 
     //constructor
     public DefaultPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver, this);
 
     }

@@ -3,19 +3,19 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginModal {
-    WebDriver driver;
+public class LoginModal extends BasePage{
 
     public LoginModal(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     // Locators
  By usernameField = By.xpath("//*[@id='nav-link-login']");
  By passwordFieldField = By.xpath("//*[@id='nav-link-login']");
  By signInButton = By.xpath("//*[@id='nav-link-login']");
+ By registerButton = By.xpath("");
 
-    // Methods
+    // Interaction Methods
     public void enterUsername(String username) {
         driver.findElement(usernameField).clear();
         driver.findElement(usernameField).sendKeys();
@@ -28,5 +28,13 @@ public class LoginModal {
 
     public void clickSignIn() {
         driver.findElement(signInButton).click();
+    }
+
+    public void registerUser() {
+        clickRegisterButton();
+    }
+
+    public void clickRegisterButton() {
+        driver.findElement(registerButton).click();
     }
 }

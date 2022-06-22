@@ -7,13 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 /** the page after login */
 
-public class HomePage {
-
-    WebDriver driver;
+public class HomePage extends BasePage{
 
     public HomePage (WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     // Locators using PageFactory
